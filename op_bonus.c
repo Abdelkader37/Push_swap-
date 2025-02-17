@@ -17,7 +17,7 @@ void	sa(t_s **stack_a, int n)
 	int	tmp;
 
 	if (!*stack_a || stack_a)
-		return;
+		return ;
 	if ((*stack_a) && (*stack_a)->next)
 	{
 		tmp = (*stack_a)->data;
@@ -33,7 +33,7 @@ void	sb(t_s **stack_b, int n)
 	int	tmp;
 
 	if (!*stack_b || !stack_b)
-		return;
+		return ;
 	if ((*stack_b) && (*stack_b)->next)
 	{
 		tmp = (*stack_b)->data;
@@ -47,7 +47,7 @@ void	sb(t_s **stack_b, int n)
 void	ss(t_s **stack_a, t_s **stack_b, int n)
 {
 	if (!*stack_a || !stack_a || !stack_b || !*stack_b)
-		return;
+		return ;
 	sa(stack_a, 0);
 	sb(stack_b, 0);
 	if (n)
@@ -59,7 +59,7 @@ void	pa(t_s **stack_a, t_s **stack_b, int n)
 	t_s	*tmp;
 
 	if (!stack_b || !*stack_b)
-		return;
+		return ;
 	if (n)
 		write(1, "pa\n", 3);
 	if (!*stack_b || !stack_b)
@@ -73,7 +73,7 @@ void	pb(t_s **stack_a, t_s **stack_b, int n)
 	t_s	*tmp;
 
 	if (!stack_a || !*stack_a)
-		return;
+		return ;
 	if (n)
 		write(1, "pb\n", 3);
 	if (!*stack_a || !stack_a)

@@ -17,7 +17,7 @@ void	ra(t_s **stack_a, int n)
 	t_s	*tmp;
 
 	if (!stack_a || !*stack_a)
-		return;
+		return ;
 	if (n)
 		write(1, "ra\n", 3);
 	tmp = remove_top(stack_a);
@@ -39,7 +39,7 @@ void	rb(t_s **stack_b, int n)
 void	rr(t_s **stack_a, t_s **stack_b, int n)
 {
 	if (!*stack_a || !stack_a || !stack_b || !*stack_b)
-		return;
+		return ;
 	ra(stack_a, 0);
 	rb(stack_b, 0);
 	if (n)

@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 22:35:52 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/15 20:44:04 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/17 18:11:48 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	test(t_s **stack_a, t_s **stack_b)
 
 void	exc(char *str, t_s **stack_a, t_s **stack_b)
 {
-	 if (str_cmp(str, "sa\n"))
+	if (str_cmp(str, "sa\n"))
 		sa(stack_a, 0);
 	else if (str_cmp(str, "sb\n"))
 		sb(stack_b, 0);
@@ -101,7 +101,7 @@ int	str_cmp(char *s1, char *s2)
 	return (1);
 }
 
-void ft_exit(void)
+void	ft_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);

@@ -45,7 +45,7 @@ t_s	*remove_bot(t_s **stack)
 void	rrr(t_s **stack_a, t_s **stack_b, int n)
 {
 	if (!*stack_a || !stack_a || !stack_b || !*stack_b)
-		return;
+		return ;
 	rra(stack_a, 0);
 	rrb(stack_b, 0);
 	if (n)

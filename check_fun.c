@@ -24,10 +24,10 @@ int	check_digit(char **str)
 
 	i = 0;
 	if (!str[i] || str[i][0] == '\0')
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	while (str[i])
 	{
 		j = 0;
