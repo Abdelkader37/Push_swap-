@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 22:35:52 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/12 22:09:24 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/15 20:44:04 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char *av[])
 			return (stackclear(&stack_a), 0);
 		if (!check_if_sort(stack_a))
 			test(&stack_a, &stack_b);
+		return (stackclear(&stack_a), stackclear(&stack_b), 0);
 	}
 }
 
@@ -50,18 +51,17 @@ void	test(t_s **stack_a, t_s **stack_b)
 		if (!str)
 			break ;
 		exc(str, stack_a, stack_b);
+		free(str);
 	}
 	if (check_if_sort(*stack_a))
-		write(1, "OK", 2);
+		write(1, "OK\n", 3);
 	else
-		write(1, "KO", 2);
+		write(1, "KO\n", 3);
 }
 
 void	exc(char *str, t_s **stack_a, t_s **stack_b)
 {
-	if (!str)
-		return ;
-	else if (str_cmp(str, "sa\n"))
+	 if (str_cmp(str, "sa\n"))
 		sa(stack_a, 0);
 	else if (str_cmp(str, "sb\n"))
 		sb(stack_b, 0);
@@ -83,7 +83,8 @@ void	exc(char *str, t_s **stack_a, t_s **stack_b)
 		pa(stack_a, stack_b, 0);
 	else if (str_cmp(str, "pb\n"))
 		pb(stack_a, stack_b, 0);
-	return (free(str));
+	else
+		ft_exit();
 }
 
 int	str_cmp(char *s1, char *s2)
@@ -98,4 +99,10 @@ int	str_cmp(char *s1, char *s2)
 		i++;
 	}
 	return (1);
+}
+
+void ft_exit(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }

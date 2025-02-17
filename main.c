@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 21:30:18 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/11 20:37:11 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/15 21:29:11 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(int ac, char *av[])
 			return (stackclear(&stack_a), 0);
 		if (!check_if_sort(stack_a))
 			sort(&stack_a, &stack_b);
+		return (stackclear(&stack_a), stackclear(&stack_b), 0);
 	}
 }

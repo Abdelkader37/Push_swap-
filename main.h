@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:47:19 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/12 21:26:31 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/17 17:06:55 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ int					check_if_sort(t_s *stack);
 void				exc(char *str, t_s **stack_a, t_s **stack_b);
 int					str_cmp(char *s1, char *s2);
 void				test(t_s **stack_a, t_s **stack_b);
+void 				ft_exit(void);
+void 				sort_three(t_s **stack_a);
+void 				sort_five(t_s **stack_a, t_s **stack_b);
 
 #endif
