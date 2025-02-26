@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 20:53:34 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/13 18:51:27 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/24 20:56:24 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ int	check_digit(char **str)
 
 	i = 0;
 	if (!str[i] || str[i][0] == '\0')
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
+		return (error_h());
 	while (str[i])
 	{
 		j = 0;
@@ -35,10 +32,7 @@ int	check_digit(char **str)
 		{
 			if (!ft_isdigit(str[i][j]) && !((str[i][j] == '-'
 						|| str[i][j] == '+') && ft_isdigit(str[i][j + 1])))
-			{
-				write(2, "Error\n", 6);
-				return (0);
-			}
+				return (error_h());
 			j++;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:08:37 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/15 21:19:29 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/21 19:08:19 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	rra(t_s **stack_a, int n)
 
 	if (!*stack_a || !stack_a)
 		return ;
-	if (n)
-		write(1, "rra\n", 4);
 	tmp = remove_bot(stack_a);
 	stack_add_front(stack_a, tmp);
+	if (n)
+		write(1, "rra\n", 4);
 }
 
 void	rrb(t_s **stack_b, int n)
@@ -64,8 +64,8 @@ void	rrb(t_s **stack_b, int n)
 
 	if (!*stack_b || !stack_b)
 		return ;
-	if (n)
-		write(1, "rrb\n", 4);
 	tmp = remove_bot(stack_b);
 	stack_add_front(stack_b, tmp);
+	if (n)
+		write(1, "rrb\n", 4);
 }

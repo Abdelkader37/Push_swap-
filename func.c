@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 21:29:41 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/07 16:49:19 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/24 21:15:37 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ void	add_to_stack(t_s **stack, char **str)
 	t_s		*new;
 
 	i = 0;
+	if (!str || !*str)
+		return ;
 	while (str[i])
 	{
 		j = ft_atoi(str[i]);

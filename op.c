@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 21:30:32 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/15 21:23:40 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/21 19:00:12 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	sa(t_s **stack_a, int n)
 {
 	int	tmp;
 
-	if (n)
-		write(1, "sa\n", 3);
 	if ((*stack_a) && (*stack_a)->next)
 	{
 		tmp = (*stack_a)->data;
 		(*stack_a)->data = (*stack_a)->next->data;
 		(*stack_a)->next->data = tmp;
 	}
+	if (n)
+		write(1, "sa\n", 3);
 }
 
 void	sb(t_s **stack_b, int n)

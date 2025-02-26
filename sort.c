@@ -6,11 +6,12 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:50:08 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/17 17:20:47 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/25 18:03:17 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+#include <stdio.h>
 
 void	sort(t_s **stack_a, t_s **stack_b)
 {
@@ -18,16 +19,16 @@ void	sort(t_s **stack_a, t_s **stack_b)
 	int	max_r;
 
 	len = t_s_len(*stack_a);
+	indexing(*stack_a);
 	if (len == 2 && (*stack_a)->data > (*stack_a)->next->data)
 		sa(stack_a, 1);
 	else if (len == 3)
 		sort_three(stack_a);
-	indexing(*stack_a);
-	if (len == 5)
+	else if (len == 5)
 		sort_five(stack_a, stack_b);
 	else
 	{
-		max_r = len * 0.048 + 10;
+		max_r = len * 0.5 + 10;
 		push_to_b(stack_a, stack_b, max_r);
 		push_to_a(stack_a, stack_b, len - 1);
 	}

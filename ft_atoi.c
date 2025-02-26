@@ -6,11 +6,12 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:54:39 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/07 16:49:43 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/24 21:31:03 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
+#include <stdio.h>
 
 long	ft_atoi(const char *str)
 {
@@ -27,7 +28,7 @@ long	ft_atoi(const char *str)
 	{
 		sign = -(sign);
 		i++;
-		if (str[i] == '+')
+		if (str[i] == '+' && str[i] == '-')
 			return (0);
 	}
 	if (str[i] == '+')
@@ -37,7 +38,7 @@ long	ft_atoi(const char *str)
 		num = num * 10 + (str[i] - 48);
 		i++;
 	}
-	return (num * sign);
+	return (atoi_err(num * sign, &str[i]));
 }
 
 void	freestr(char **str)

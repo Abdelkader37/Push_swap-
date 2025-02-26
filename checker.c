@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 22:35:52 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/17 18:11:48 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/24 21:46:46 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ int	main(int ac, char *av[])
 		}
 		if (!check_dup(stack_a))
 			return (stackclear(&stack_a), 0);
-		if (!check_if_sort(stack_a))
-			test(&stack_a, &stack_b);
+		test(&stack_a, &stack_b);
 		return (stackclear(&stack_a), stackclear(&stack_b), 0);
 	}
 }
@@ -84,7 +83,7 @@ void	exc(char *str, t_s **stack_a, t_s **stack_b)
 	else if (str_cmp(str, "pb\n"))
 		pb(stack_a, stack_b, 0);
 	else
-		ft_exit();
+		ft_exit(str, stack_a, stack_b);
 }
 
 int	str_cmp(char *s1, char *s2)
@@ -101,8 +100,11 @@ int	str_cmp(char *s1, char *s2)
 	return (1);
 }
 
-void	ft_exit(void)
+void	ft_exit(char *str, t_s **stack_a, t_s **stack_b)
 {
+	free(str);
+	stackclear(stack_a);
+	stackclear(stack_b);
 	write(2, "Error\n", 6);
 	exit(1);
 }

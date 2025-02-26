@@ -6,7 +6,7 @@
 /*   By: aqrafi <aqrafi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:52:01 by aqrafi            #+#    #+#             */
-/*   Updated: 2025/02/15 20:32:26 by aqrafi           ###   ########.fr       */
+/*   Updated: 2025/02/24 21:59:15 by aqrafi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ void	rrr(t_s **stack_a, t_s **stack_b, int n)
 	rrb(stack_b, 0);
 	if (n)
 		write(1, "rrr\n", 4);
+}
+
+int	error_h(void)
+{
+	write(2, "Error\n", 6);
+	return (0);
+}
+
+long	atoi_err(long n, const char *str)
+{
+	if (*str)
+	{
+		n = 2147483650;
+		return (n);
+	}
+	return (n);
 }
